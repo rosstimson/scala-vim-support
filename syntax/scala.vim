@@ -96,6 +96,8 @@ syn region scalaXmlEscape matchgroup=scalaXmlEscapeSpecial start="{" matchgroup=
 syn match scalaXmlQuote "&[^;]\+;" contained
 syn match scalaXmlComment "<!--\_[^>]*-->" contained
 
+syn match scalaAnnotation "@[^ =:;()[]\+"
+
 syn sync fromstart
 
 " map Scala groups to standard groups
@@ -138,6 +140,7 @@ hi link scalaDefSpecializer Function
 hi link scalaClassName Special
 hi link scalaClassSpecializer Special
 hi link scalaConstructor Special
+hi link scalaAnnotation Special
 hi link scalaConstructorSpecializer scalaConstructor
 
 let b:current_syntax = "scala"
