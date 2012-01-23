@@ -18,12 +18,12 @@ function! MakeScalaFile()
     
     let p = substitute(x, "/[^/]*$", "", "")
     let p = substitute(p, "/", ".", "g")
-    let p = substitute(p, ".*\.src$", "@", "") " unnamed package
-    let p = substitute(p, ".*\.src\.", "!", "")
-    let p = substitute(p, "^!main\.scala\.", "!", "") "
-    let p = substitute(p, "^!.*\.ru\.", "!ru.", "")
-    let p = substitute(p, "^!.*\.org\.", "!org.", "")
-    let p = substitute(p, "^!.*\.com\.", "!com.", "")
+    let p = substitute(p, ".*[.]src$", "@", "") " unnamed package
+    let p = substitute(p, ".*[.]src[.]", "!", "")
+    let p = substitute(p, "^!main[.]scala[.]", "!", "") "
+    let p = substitute(p, "^!.*[.]ru[.]", "!ru.", "")
+    let p = substitute(p, "^!.*[.]org[.]", "!org.", "")
+    let p = substitute(p, "^!.*[.]com[.]", "!com.", "")
     
     " ! marks that we found package name.
     if match(p, "^!") == 0
